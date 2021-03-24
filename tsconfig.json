@@ -4,6 +4,7 @@
     "module": "esnext",
     "strict": true,
     "jsx": "preserve",
+	"jsxFactory": "VueTsxSupport",
     "importHelpers": true,
     "moduleResolution": "node",
     "skipLibCheck": true,
@@ -28,6 +29,10 @@
       "scripthost"
     ]
   },
+  "files": [
+    "node_modules/vue-tsx-support/enable-check.d.ts",
+    "node_modules/vue-tsx-support/options/allow-unknown-props.d.ts"
+  ],
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
