@@ -17,15 +17,11 @@ const props = {
     default: false
   },
   onClear: {
-    type: Function as PropType<() => void>,
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
-    default: () => {}
+    type: Function as PropType<() => void>
   },
   value: String,
   onChange: {
-    type: Function as PropType<(value: string) => void>,
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
-    default: () => {}
+    type: Function as PropType<(value: string) => void>
   }
 };
 
@@ -43,7 +39,6 @@ const MultipleInput = defineComponent({
             const { value } = e.target;
             console.log(props.onChange);
             ctx.emit("change", value);
-            props.onChange(value as string);
           }}
           placeholder={props.placeholder}
         ></textarea>
@@ -51,7 +46,7 @@ const MultipleInput = defineComponent({
           v-show={props.allowClear}
           class="clear"
           onClick={() => {
-            props.onClear();
+            ctx.emit("clear");
           }}
         >
           x
